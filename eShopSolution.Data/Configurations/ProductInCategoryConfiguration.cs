@@ -5,16 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace eShopSolution.Data
+namespace eShopSolution.Data.Configurations
 {
     public class ProductInCategoryConfiguration : IEntityTypeConfiguration<ProductInCategory>
     {
         public void Configure(EntityTypeBuilder<ProductInCategory> builder)
         {
-            builder.HasKey(t => new { t.CategoryId, t.ProductId});
-            builder.ToTable("ProductInCategories");
-            builder.HasOne(t => t.Product).WithMany(pc => pc.ProductInCategories)
-                .HasForeignKey(pc => pc.CategoryId);
+            builder.ToTable("ProductInCategory");
+            builder.HasKey(x => x.ProductId);
+            builder.HasOne(x => x.Category).WithMany(x => x.ProductInCategory).HasForeignKey(x => x.CategoryId);
         }
     }
 }

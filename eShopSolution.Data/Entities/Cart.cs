@@ -17,6 +17,7 @@ namespace eShopSolution.Data.Entities
 
         public DateTime DateCreated { get; set; }
 
+
         
     }
 }

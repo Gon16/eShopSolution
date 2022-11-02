@@ -11,9 +11,9 @@ namespace eShopSolution.Data.Entities
         public int Quantity { set; get; }
         public decimal Price { set; get; }
 
-        public OrderDetail Order { get; set; }
+        
 
         public Product Product { get; set; }
-        public object OrderDetails { get; internal set; }
+        public Order Order { get; set; }
     }
 }

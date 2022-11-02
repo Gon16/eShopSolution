@@ -7,12 +7,13 @@ using System.Text;
 
 namespace eShopSolution.Data.Configurations
 {
-    public class OrderConfiguration : IEntityTypeConfiguration<OrderDetail>
+    public class OrderConfiguration : IEntityTypeConfiguration<Order>
     {
-        public void Configure(EntityTypeBuilder<OrderDetail> builder)
+        public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.ToTable("Orders");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.ShipEmail).IsRequired().IsUnicode(false).HasMaxLength(50);
 
         }
