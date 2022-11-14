@@ -15,5 +15,8 @@ namespace eShopSolution.Data.Entities
         public List<ProductTranslation> ProductTranslation { get; set; }
 
         public List<CategoryTranslation> CategoryTranslation { get; set; }
+
+       
+
     }
 }
